@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEO & CRAWLABILITY
+    ═══════════════════════════════════════════════════════════ -->
+    <title>Quartrex | Mobile Apps for Funded Startups — 45-Day Delivery</title>
+    <meta name="description" content="Quartrex builds iOS and Android apps for seed-to-Series-A startups in 45 days, complete with a professional investor demo video. Get a free prototype today.">
+    <meta name="keywords" content="mobile app development, funded startups, iOS development, Android development, investor demo, startup agency, app design">
+    <meta name="author" content="Quartrex">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://quartrex.com/">
+
+    <!-- Open Graph (LinkedIn, Facebook, Slack unfurls) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quartrex.com/">
+    <meta property="og:title" content="Quartrex | Mobile Apps for Funded Startups — 45-Day Delivery">
+    <meta property="og:description" content="We design, build, and launch mobile apps with an investor-ready demo video — all in one team. Trusted by seed-to-Series-A startups.">
+    <meta property="og:image" content="https://quartrex.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Quartrex">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@quartrex">
+    <meta name="twitter:title" content="Quartrex | Mobile Apps for Funded Startups">
+    <meta name="twitter:description" content="iOS + Android + Investor Demo Video in 45 days. Built for funded startups.">
+    <meta name="twitter:image" content="https://quartrex.com/og-image.png">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECURITY HEADERS (meta fallbacks — real headers set server-side)
+    ═══════════════════════════════════════════════════════════ -->
+    <!-- Content Security Policy — tighten once Formspree ID is known -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline';
+        style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self' https://formspree.io;
+        frame-src https://calendly.com;
+        base-uri 'self';
+        form-action 'self' https://formspree.io;
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PERFORMANCE — font preconnect + preload
+    ═══════════════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Tailwind: config MUST be defined before CDN loads, CDN must be sync (no defer) -->
+    <script>
+        /* Tailwind custom theme — runs before CDN script parses the DOM */
+        window.tailwind = window.tailwind || {};
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        bg: '#FFFFFF',
+                        surface: '#FAFAFA',
+                        alt: '#F8FAFC',
+                        main: '#0F172A',
+                        muted: '#64748B',
+                        borderLight: '#E2E8F0',
+                        btn: '#2563EB',
+                        'btn-hover': '#1D4ED8',
+                        accent: '#7C3AED',
+                    },
+                    boxShadow: {
+                        'card': '0 8px 30px rgba(0,0,0,0.04)',
+                        'card-hover': '0 16px 48px rgba(0,0,0,0.08)',
+                        'modal': '0 32px 80px rgba(0,0,0,0.12)',
+                    },
+                    borderRadius: {
+                        '2xl': '16px',
+                        '3xl': '24px',
+                        '4xl': '32px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- CDN loads synchronously so it picks up the config above immediately -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" sizes="64x64">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
+    <!-- Sitemap discovery -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD (Google rich results)
+    ═══════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Quartrex",
+      "url": "https://quartrex.com",
+      "logo": "https://quartrex.com/logo.png",
+      "description": "Quartrex builds iOS and Android mobile apps for funded startups in 45 days, including an investor-ready demo video.",
+      "email": "ahmad@quartrex.com",
+      "areaServed": "Worldwide",
+      "serviceType": ["Mobile App Development", "iOS Development", "Android Development", "UI/UX Design", "Investor Demo Video"],
+      "priceRange": "$$$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mobile App Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Mobile App Development",
+              "description": "iOS and Android app design, development, App Store submission, and investor demo video in 45 days."
+            },
+            "price": "8000",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "8000",
+              "priceCurrency": "USD",
+              "description": "Starting price for funded teams"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Free Prototype",
+              "description": "Custom Figma screens using your real branding and product flow, delivered within 48 hours."
+            },
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        ]
+      },
+      "sameAs": []
+    }
+    </script>
+
+    <!-- WebSite schema for sitelinks search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Quartrex",
+      "url": "https://quartrex.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://quartrex.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- FAQPage schema for FAQ rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Who do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Mostly funded startups building mobile products — seed to Series A teams that want to move fast without hiring an internal team." }},
+        { "@type": "Question", "name": "What does the free prototype include?", "acceptedAnswer": { "@type": "Answer", "text": "A few custom screens built in Figma using your real branding, colors, and product flow. Fully clickable and interactive — not static screenshots." }},
+        { "@type": "Question", "name": "Do you build both iOS and Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we build for both the App Store and Google Play, submitted and live by the end of the project." }},
+        { "@type": "Question", "name": "What is included in the demo video?", "acceptedAnswer": { "@type": "Answer", "text": "A 60–90 second product walkthrough with professional voiceover — formatted for pitch decks, investor updates, and board presentations." }},
+        { "@type": "Question", "name": "How much does a project cost?", "acceptedAnswer": { "@type": "Answer", "text": "Projects typically start at $8,000 for funded teams, depending on scope and features. Fixed-price — no surprise invoices." }},
+        { "@type": "Question", "name": "How long does a project take?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects launch within 45 days. Timeline depends on feedback speed and scope." }}
+      ]
+    }
+    </script>
+    <style>
+        /* ─── FOUC prevention: hide body until Tailwind is ready ─── */
+        body { visibility: hidden; }
+        body.tw-ready { visibility: visible; }
+
+        * { box-sizing: border-box; }
+        body {
+            background-color: #FFFFFF;
+            color: #0F172A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Hero radial glow */
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(37,99,235,0.07) 0%, rgba(124,58,237,0.04) 40%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Scroll reveal */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+        }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Stagger children */
+        .stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+        /* FAQ details */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.25s cubic-bezier(0.16,1,0.3,1); }
+
+        /* Premium button */
+        .btn-primary {
+            display: inline-flex; align-items: center; justify-content: center;
+            height: 48px; padding: 0 28px;
+            background: #2563EB; color: #fff;
+            font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+            border-radius: 12px; border: none; cursor: pointer;
+            box-shadow: 0 1px 2px rgba(37,99,235,0.2), 0 4px 16px rgba(37,99,235,0.15);
+            transition: background 0.25s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.25s cubic-bezier(0.16,1,0.3,1),
+                        box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),
+                        scale 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .btn-primary:hover {
+            background: #1D4ED8;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 8px rgba(37,99,235,0.25), 0 12px 32px rgba(37,99,235,0.22);
+        }
+        .btn-primary:active { transform: translateY(0) scale(1); }
+        .btn-primary:focus-visible {
+            outline: 2px solid #2563EB;
+            outline-offset: 3px;
+        }
+
+        .btn-secondary {
+            display: inline-flex; align-items: center; justify-content: center;
+            height: 48px; padding: 0 28px;
+            background: #FFFFFF; color: #0F172A;
+            font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+            border-radius: 12px; border: 1.5px solid #E2E8F0; cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: background 0.25s cubic-bezier(0.16,1,0.3,1),
+                        border-color 0.25s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.25s cubic-bezier(0.16,1,0.3,1),
+                        box-shadow 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .btn-secondary:hover {
+            background: #F8FAFC;
+            border-color: #94A3B8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .btn-secondary:active { transform: translateY(0); }
+        .btn-secondary:focus-visible {
+            outline: 2px solid #2563EB;
+            outline-offset: 3px;
+        }
+
+        /* Form field shared focus style */
+        .form-field {
+            width: 100%; background: #F8FAFC;
+            border: 1.5px solid #E2E8F0; border-radius: 10px;
+            font-size: 14px; color: #0F172A; outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1),
+                        box-shadow 0.2s cubic-bezier(0.16,1,0.3,1),
+                        background 0.2s;
+        }
+        .form-field:focus {
+            border-color: #2563EB;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.09);
+        }
+        .form-field::placeholder { color: #94A3B8; }
+        select.form-field { appearance: none; -webkit-appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+        .form-label { display: block; font-size: 12px; font-weight: 600; color: #0F172A; margin-bottom: 6px; letter-spacing: 0.01em; }
+        .form-label-opt { display: block; font-size: 12px; font-weight: 600; color: #0F172A; margin-bottom: 6px; letter-spacing: 0.01em; }
+        .form-label-opt::after { content: ' — optional'; font-weight: 400; color: #94A3B8; }
+
+        /* Nav glass */
+        .nav-glass {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(226,232,240,0.8);
+        }
+
+        /* Card premium */
+        .card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            transition: box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s;
+        }
+        .card:hover {
+            box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            border-color: #CBD5E1;
+        }
+
+        .card-surface {
+            background: #FAFAFA;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            transition: box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .card-surface:hover {
+            box-shadow: 0 16px 48px rgba(0,0,0,0.07);
+            transform: translateY(-2px);
+        }
+
+        /* Phone mockup */
+        .phone-frame {
+            background: #0F172A;
+            border-radius: 36px;
+            box-shadow: 0 32px 80px rgba(15,23,42,0.35), 0 0 0 1px rgba(255,255,255,0.06) inset;
+            position: relative;
+            overflow: hidden;
+        }
+        .phone-screen {
+            background: #FFFFFF;
+            border-radius: 30px;
+            margin: 8px;
+            overflow: hidden;
+        }
+        .phone-notch {
+            width: 80px; height: 22px;
+            background: #0F172A;
+            border-radius: 0 0 16px 16px;
+            margin: 0 auto;
+            position: relative; z-index: 10;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 5px 12px;
+            background: rgba(37,99,235,0.06);
+            border: 1px solid rgba(37,99,235,0.15);
+            border-radius: 100px;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+            color: #2563EB; text-transform: uppercase;
+        }
+
+        /* Step number */
+        .step-num {
+            width: 40px; height: 40px; border-radius: 12px;
+            background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.08));
+            border: 1px solid rgba(37,99,235,0.12);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; color: #2563EB;
+            flex-shrink: 0;
+        }
+
+        /* Checkmark icon */
+        .check-icon { color: #2563EB; font-weight: 700; flex-shrink: 0; }
+
+        /* Divider line */
+        .section-divider { border: none; border-top: 1px solid #E2E8F0; }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #0F172A 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Purple accent badge */
+        .badge-purple {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 5px 12px;
+            background: rgba(124,58,237,0.06);
+            border: 1px solid rgba(124,58,237,0.15);
+            border-radius: 100px;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+            color: #7C3AED; text-transform: uppercase;
+        }
+
+        /* Stat value */
+        .stat-value {
+            font-size: 42px; font-weight: 800; letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+        /* selection */
+        ::selection { background: rgba(37,99,235,0.12); color: #0F172A; }
+
+        /* Hero float animations */
+        @keyframes floatA {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(0.5deg); }
+            66% { transform: translateY(-5px) rotate(-0.3deg); }
+        }
+        @keyframes floatB {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            40% { transform: translateY(-8px) rotate(-0.4deg); }
+            70% { transform: translateY(-12px) rotate(0.3deg); }
+        }
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(-12px, -16px) scale(1.05); }
+        }
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(10px, -12px) scale(0.95); }
+        }
+
+        /* Hero stage positioning */
+        .hero-stage { position: relative; }
+
+        /* Smooth mouse parallax */
+        #heroMockup { transform-style: preserve-3d; }
+
+        /* ─── Scroll progress bar ─── */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; z-index: 9998;
+            height: 2.5px; width: 0%;
+            background: linear-gradient(90deg, #2563EB, #7C3AED);
+            transition: width 0.1s linear;
+            pointer-events: none;
+        }
+
+        /* ─── Nav scroll state ─── */
+        .nav-scrolled {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        /* ─── Mobile nav menu ─── */
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 39;
+            background: rgba(15,23,42,0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        #mobile-menu.open { display: flex; align-items: flex-end; }
+        #mobile-menu-panel {
+            background: #FFFFFF;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+            padding: 24px 24px 32px;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+        }
+        #mobile-menu.open #mobile-menu-panel { transform: translateY(0); }
+
+        /* ─── Nav active link ─── */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute; bottom: -4px; left: 0; right: 0;
+            height: 2px; border-radius: 2px;
+            background: #2563EB;
+            transform: scaleX(0);
+            transition: transform 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .nav-link.active { color: #0F172A !important; }
+        .nav-link.active::after { transform: scaleX(1); }
+
+        /* ─── Floating CTA (mobile) ─── */
+        #float-cta {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            z-index: 100;
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.4s cubic-bezier(0.16,1,0.3,1);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        #float-cta.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        @media (min-width: 768px) { #float-cta { display: none !important; } }
+
+        /* ─── Section reveal stagger ─── */
+        .fade-in-up[data-delay="1"] { transition-delay: 0.08s; }
+        .fade-in-up[data-delay="2"] { transition-delay: 0.16s; }
+        .fade-in-up[data-delay="3"] { transition-delay: 0.24s; }
+        .fade-in-up[data-delay="4"] { transition-delay: 0.32s; }
+
+        /* ─── Improved FAQ interaction ─── */
+        details { cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] { background: #FFFFFF !important; }
+        details[open] summary { color: #0F172A; }
+
+        /* ─── Smooth anchor scroll offset ─── */
+        [id] { scroll-margin-top: 88px; }
+
+        /* ─── What You Get items hover ─── */
+        .deliverable-item {
+            transition: background 0.2s, border-color 0.2s, box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .deliverable-item:hover {
+            background: #FFFFFF !important;
+            border-color: rgba(37,99,235,0.2) !important;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+            transform: translateY(-3px);
+        }
+
+        /* ─── Tooltip on trust badges ─── */
+        .trust-item { position: relative; cursor: default; }
+
+        /* ─── Hamburger button ─── */
+        .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+        .hamburger span { width: 22px; height: 2px; background: #0F172A; border-radius: 2px; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), opacity 0.2s; display: block; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ─── CTA section pulse ring ─── */
+        @keyframes pulseRing {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .pulse-ring {
+            position: absolute; inset: -8px;
+            border-radius: inherit;
+            border: 2px solid #2563EB;
+            animation: pulseRing 2s cubic-bezier(0.16,1,0.3,1) infinite;
+            pointer-events: none;
+        }
+    </style>
+</head>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" style="position:absolute;top:-999px;left:0;z-index:99999;padding:8px 16px;background:#2563EB;color:#fff;font-weight:600;font-size:14px;border-radius:0 0 8px 8px;transition:top 0.2s;" onfocus="this.style.top='0'" onblur="this.style.top='-999px'">Skip to main content</a>
+
+    <!-- Scroll progress indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Floating mobile CTA -->
+    <div id="float-cta">
+        <button onclick="openModal('prototype')" class="btn-primary" style="height:48px;padding:0 28px;font-size:14px;border-radius:100px;box-shadow:0 8px 32px rgba(37,99,235,0.35);">
+            Get a Free Prototype ↗
+        </button>
+    </div>
+
+<body class="overflow-x-hidden">
+
+  <!-- HEADER -->
+<header
+    id="site-header"
+    class="nav-glass fixed top-0 left-0 right-0 z-40"
+    style="transition:box-shadow .3s;">
+
+    <div
+        class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#" style="display:flex;align-items:center;flex-shrink:0;">
+            <img
+                src="./logo.png"
+                alt="Quartrex"
+                style="
+                    height:58px;
+                    width:auto;
+                    display:block;
+                    object-fit:contain;
+                ">
+        </a>
+
+        <!-- Desktop nav -->
+        <nav
+            class="hidden md:flex items-center gap-10"
+            aria-label="Main navigation">
+
+            <a
+                href="#how-we-work"
+                class="nav-link text-[14px] font-medium text-muted hover:text-main transition-colors duration-200"
+                style="text-decoration:none;">
+                How We Work
+            </a>
+
+            <a
+                href="#faq"
+                class="nav-link text-[14px] font-medium text-muted hover:text-main transition-colors duration-200"
+                style="text-decoration:none;">
+                FAQ
+            </a>
+
+        </nav>
+
+        <!-- Actions -->
+        <div style="display:flex;align-items:center;gap:14px;">
+
+            <button
+                onclick="openModal('prototype')"
+                class="btn-primary"
+                style="
+                    height:42px;
+                    padding:0 20px;
+                    font-size:13px;
+                    border-radius:12px;
+                ">
+                Get a Free Prototype
+            </button>
+
+            <!-- Mobile hamburger -->
+            <button
+                id="hamburger-btn"
+                class="hamburger md:hidden"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<div
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu">
+
+    <div id="mobile-menu-panel">
+
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                margin-bottom:32px;
+            ">
+
+            <img
+                src="./logo.png"
+                alt="Quartrex"
+                style="
+                    height:50px;
+                    width:auto;
+                    object-fit:contain;
+                ">
+
+            <button
+                id="mobile-close"
+                aria-label="Close menu"
+                style="
+                    width:36px;
+                    height:36px;
+                    border-radius:50%;
+                    border:1px solid #E2E8F0;
+                    background:#F8FAFC;
+                    cursor:pointer;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    font-size:14px;
+                    color:#64748B;
+                ">
+                ✕
+            </button>
+
+        </div>
+
+        <nav
+            style="display:flex;flex-direction:column;gap:6px;"
+            aria-label="Mobile navigation">
+
+            <a
+                href="#how-we-work"
+                onclick="closeMobileMenu()"
+                style="
+                    display:block;
+                    padding:16px;
+                    font-size:16px;
+                    font-weight:600;
+                    color:#0F172A;
+                    text-decoration:none;
+                    border-radius:14px;
+                    transition:background .15s;
+                "
+                onmouseover="this.style.background='#F8FAFC'"
+                onmouseout="this.style.background='transparent'">
+
+                How We Work
+
+            </a>
+
+            <a
+                href="#faq"
+                onclick="closeMobileMenu()"
+                style="
+                    display:block;
+                    padding:16px;
+                    font-size:16px;
+                    font-weight:600;
+                    color:#0F172A;
+                    text-decoration:none;
+                    border-radius:14px;
+                    transition:background .15s;
+                "
+                onmouseover="this.style.background='#F8FAFC'"
+                onmouseout="this.style.background='transparent'">
+
+                FAQ
+
+            </a>
+
+        </nav>
+
+        <div
+            style="
+                margin-top:28px;
+                padding-top:28px;
+                border-top:1px solid #E2E8F0;
+                display:flex;
+                flex-direction:column;
+                gap:12px;
+            ">
+
+            <button
+                onclick="openModal('prototype');closeMobileMenu()"
+                class="btn-primary"
+                style="
+                    width:100%;
+                    height:54px;
+                    border-radius:14px;
+                    font-size:15px;
+                ">
+                Get a Free Prototype
+            </button>
+
+            <button
+                onclick="openModal('call');closeMobileMenu()"
+                class="btn-secondary"
+                style="
+                    width:100%;
+                    height:54px;
+                    border-radius:14px;
+                    font-size:15px;
+                ">
+                Book a Call
+            </button>
+
+        </div>
+
+    </div>
+</div>
+    <main id="main-content" class="pt-16">
+
+        <!-- HERO -->
+        <section class="relative overflow-hidden" style="background:#FFFFFF;">
+            <div class="hero-glow"></div>
+            <div class="max-w-6xl mx-auto px-6 py-20 md:py-32 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+
+                <!-- Left copy -->
+                <div class="fade-in-up space-y-7 max-w-xl">
+                    <div class="badge">
+                        <span style="width:6px;height:6px;border-radius:50%;background:#2563EB;flex-shrink:0;animation:pulseRing 2.5s cubic-bezier(0.16,1,0.3,1) infinite;position:relative;"></span>
+                        For funded startups
+                    </div>
+                    <h1 style="font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;color:#0F172A;">
+                        Your investors expect mobile.<br>We build it in 45 days.
+                    </h1>
+                    <p style="font-size:18px;color:#64748B;line-height:1.65;font-weight:400;">
+                        We design, build, and launch mobile apps with a short investor-ready demo video — all in one team.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <button onclick="openModal('prototype')" class="btn-primary" style="height:52px;padding:0 32px;font-size:15px;border-radius:14px;">
+                            See Your App for Free
+                        </button>
+                        <button onclick="openModal('call')" class="btn-secondary" style="height:52px;padding:0 32px;font-size:15px;border-radius:14px;">
+                            Book a Call
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-6 pt-1" style="font-size:13px;font-weight:500;color:#64748B;">
+                        <span class="flex items-center gap-2">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            No long contracts
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Weekly updates
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Direct communication
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right: hero mockup composition -->
+                <div class="fade-in-up flex justify-center lg:justify-end relative hero-stage" style="transition-delay:150ms;min-height:520px;align-items:center;">
+
+                    <!-- Ambient orbs -->
+                    <div style="position:absolute;top:10%;right:5%;width:280px;height:280px;background:radial-gradient(circle,rgba(37,99,235,0.09) 0%,transparent 70%);pointer-events:none;border-radius:50%;animation:orbFloat1 8s ease-in-out infinite;"></div>
+                    <div style="position:absolute;bottom:10%;left:5%;width:200px;height:200px;background:radial-gradient(circle,rgba(124,58,237,0.07) 0%,transparent 70%);pointer-events:none;border-radius:50%;animation:orbFloat2 10s ease-in-out infinite;"></div>
+
+                    <!-- Floating card — User Journey (top-left) -->
+                    <div class="hero-float-card" style="position:absolute;left:0;top:12%;z-index:20;animation:floatA 6s ease-in-out infinite;will-change:transform;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);">
+                        <div style="background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(226,232,240,0.8);border-radius:18px;padding:16px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.07),0 1px 0 rgba(255,255,255,0.9) inset;min-width:148px;">
+                            <div style="display:flex;align-items:center;gap:7px;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #F1F5F9;">
+                                <div style="width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#7C3AED);flex-shrink:0;"></div>
+                                <span style="font-size:9px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:0.07em;">User Journey</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:7px;">
+                                <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:8px 10px;">
+                                    <div style="width:36px;height:5px;background:#0F172A;border-radius:3px;margin-bottom:4px;opacity:0.7;"></div>
+                                    <div style="width:52px;height:3.5px;background:#94A3B8;border-radius:2px;opacity:0.5;"></div>
+                                </div>
+                                <div style="display:flex;justify-content:center;"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#CBD5E1" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7"/></svg></div>
+                                <div style="background:#EFF6FF;border:1px solid rgba(37,99,235,0.2);border-radius:8px;padding:8px 10px;">
+                                    <div style="width:44px;height:5px;background:#2563EB;border-radius:3px;margin-bottom:4px;opacity:0.8;"></div>
+                                    <div style="width:32px;height:3.5px;background:#93C5FD;border-radius:2px;opacity:0.7;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main phone -->
+                    <div id="heroMockup" style="position:relative;z-index:10;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);will-change:transform;margin:0 40px;">
+                        <!-- Deep drop shadow layer -->
+                        <div style="position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);width:70%;height:28px;background:radial-gradient(ellipse,rgba(15,23,42,0.22) 0%,transparent 70%);pointer-events:none;filter:blur(8px);"></div>
+
+                        <!-- Phone outer shell -->
+                        <div style="width:242px;background:linear-gradient(175deg,#1E293B 0%,#0F172A 100%);border-radius:44px;padding:11px;box-shadow:0 40px 80px rgba(15,23,42,0.38),0 12px 24px rgba(15,23,42,0.2),0 0 0 1px rgba(255,255,255,0.08) inset,0 2px 0 rgba(255,255,255,0.06) inset;position:relative;">
+
+                            <!-- Side button details -->
+                            <div style="position:absolute;right:-3px;top:88px;width:3px;height:32px;background:linear-gradient(180deg,#334155,#1E293B);border-radius:2px;"></div>
+                            <div style="position:absolute;left:-3px;top:80px;width:3px;height:22px;background:linear-gradient(180deg,#334155,#1E293B);border-radius:2px;"></div>
+                            <div style="position:absolute;left:-3px;top:112px;width:3px;height:36px;background:linear-gradient(180deg,#334155,#1E293B);border-radius:2px;"></div>
+
+                            <!-- Screen bezel -->
+                            <div style="background:#FFFFFF;border-radius:34px;overflow:hidden;">
+                                <!-- Dynamic island -->
+                                <div style="background:#0F172A;display:flex;justify-content:center;padding-top:12px;padding-bottom:4px;">
+                                    <div style="width:88px;height:24px;background:#000;border-radius:20px;"></div>
+                                </div>
+
+                                <!-- App screen -->
+                                <div style="background:#F8FAFC;padding:16px 14px 20px;display:flex;flex-direction:column;gap:12px;min-height:430px;">
+
+                                    <!-- App top bar -->
+                                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+                                        <div>
+                                            <div style="font-size:8px;color:#94A3B8;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:3px;">Good morning</div>
+                                            <div style="width:52px;height:7px;background:#0F172A;border-radius:4px;opacity:0.85;"></div>
+                                        </div>
+                                        <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#7C3AED);box-shadow:0 2px 8px rgba(37,99,235,0.35);"></div>
+                                    </div>
+
+                                    <!-- Main stat card -->
+                                    <div style="background:#FFFFFF;border-radius:18px;padding:15px;box-shadow:0 2px 12px rgba(0,0,0,0.06),0 0 0 1px rgba(226,232,240,0.8);">
+                                        <div style="font-size:8px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Monthly Growth</div>
+                                        <div style="font-size:22px;font-weight:800;color:#0F172A;letter-spacing:-0.03em;margin-bottom:10px;line-height:1;">+38.4%</div>
+                                        <!-- Mini chart -->
+                                        <div style="display:flex;align-items:flex-end;gap:3px;height:30px;">
+                                            <div style="flex:1;background:#EFF6FF;border-radius:3px 3px 2px 2px;height:35%;"></div>
+                                            <div style="flex:1;background:#EFF6FF;border-radius:3px 3px 2px 2px;height:50%;"></div>
+                                            <div style="flex:1;background:#BFDBFE;border-radius:3px 3px 2px 2px;height:65%;"></div>
+                                            <div style="flex:1;background:#60A5FA;border-radius:3px 3px 2px 2px;height:78%;"></div>
+                                            <div style="flex:1;background:#2563EB;border-radius:3px 3px 2px 2px;height:100%;box-shadow:0 2px 6px rgba(37,99,235,0.4);"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Two metric tiles -->
+                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                        <div style="background:#FFFFFF;border-radius:14px;padding:12px;box-shadow:0 1px 6px rgba(0,0,0,0.05),0 0 0 1px rgba(226,232,240,0.7);">
+                                            <div style="width:22px;height:22px;border-radius:8px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:8px;">
+                                                <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                                            </div>
+                                            <div style="width:30px;height:5px;background:#0F172A;border-radius:3px;margin-bottom:3px;opacity:0.8;"></div>
+                                            <div style="width:20px;height:3.5px;background:#94A3B8;border-radius:2px;opacity:0.5;"></div>
+                                        </div>
+                                        <div style="background:#FFFFFF;border-radius:14px;padding:12px;box-shadow:0 1px 6px rgba(0,0,0,0.05),0 0 0 1px rgba(226,232,240,0.7);">
+                                            <div style="width:22px;height:22px;border-radius:8px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:8px;">
+                                                <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12l5 5L20 7"/></svg>
+                                            </div>
+                                            <div style="width:30px;height:5px;background:#0F172A;border-radius:3px;margin-bottom:3px;opacity:0.8;"></div>
+                                            <div style="width:20px;height:3.5px;background:#94A3B8;border-radius:2px;opacity:0.5;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Action strip -->
+                                    <div style="margin-top:auto;background:linear-gradient(125deg,#2563EB 0%,#1D4ED8 60%,#1e40af 100%);border-radius:16px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(37,99,235,0.32);">
+                                        <div>
+                                            <div style="width:56px;height:6px;background:rgba(255,255,255,0.95);border-radius:3px;margin-bottom:4px;"></div>
+                                            <div style="width:40px;height:4px;background:rgba(255,255,255,0.4);border-radius:2px;"></div>
+                                        </div>
+                                        <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.2);">
+                                            <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                                        </div>
+                                    </div>
+
+                                    <!-- Home indicator -->
+                                    <div style="display:flex;justify-content:center;padding-top:4px;">
+                                        <div style="width:36px;height:4px;background:#CBD5E1;border-radius:4px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating card — Demo Timeline (bottom-right) -->
+                    <div class="hero-float-card" style="position:absolute;right:0;bottom:14%;z-index:20;animation:floatB 7s ease-in-out infinite;will-change:transform;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);">
+                        <div style="background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(226,232,240,0.8);border-radius:18px;padding:14px 16px;box-shadow:0 8px 32px rgba(0,0,0,0.07),0 1px 0 rgba(255,255,255,0.9) inset;min-width:156px;">
+                            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:10px;letter-spacing:0.01em;padding-bottom:8px;border-bottom:1px solid #F1F5F9;">Demo Timeline</div>
+                            <div style="display:flex;gap:6px;">
+                                <div style="flex:1;height:28px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:600;color:#64748B;letter-spacing:0.03em;">Intro</div>
+                                <div style="flex:1;height:28px;background:#EFF6FF;border:1px solid rgba(37,99,235,0.25);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#2563EB;letter-spacing:0.03em;">UI Tour</div>
+                                <div style="flex:1;height:28px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:600;color:#64748B;letter-spacing:0.03em;">Outro</div>
+                            </div>
+                            <!-- Progress bar -->
+                            <div style="margin-top:10px;height:3px;background:#E2E8F0;border-radius:2px;overflow:hidden;">
+                                <div style="width:45%;height:100%;background:linear-gradient(90deg,#2563EB,#7C3AED);border-radius:2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MOBILE VS WEB -->
+        <section style="background:#FFFFFF;padding:100px 0;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-6xl mx-auto px-6">
+
+                <!-- Section header -->
+                <div class="fade-in-up text-center" style="margin-bottom:72px;">
+                    <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.14);border-radius:100px;margin-bottom:20px;">
+                        <span style="width:6px;height:6px;border-radius:50%;background:#2563EB;flex-shrink:0;display:inline-block;"></span>
+                        <span style="font-size:11px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.07em;">Why mobile</span>
+                    </div>
+                    <h2 style="font-size:clamp(1.9rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.03em;color:#0F172A;margin-bottom:14px;line-height:1.1;">
+                        Why funded startups invest in mobile.
+                    </h2>
+                    <p style="font-size:17px;color:#64748B;line-height:1.65;max-width:520px;margin:0 auto;">Your web app gets people started. Your mobile app keeps them coming back.</p>
+                </div>
+
+                <!-- Comparison grid -->
+                <div class="fade-in-up" style="display:grid;gap:0;border:1px solid #E2E8F0;border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.05);" class="md:grid-cols-2">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;">
+
+                        <!-- Web App column -->
+                        <div style="background:#FAFAFA;padding:36px 32px;">
+                            <!-- Column header -->
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #E2E8F0;">
+                                <div style="width:36px;height:36px;border-radius:10px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#94A3B8" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:14px;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">Web App</div>
+                                    <div style="font-size:11px;color:#94A3B8;font-weight:500;margin-top:1px;">Desktop-first</div>
+                                </div>
+                            </div>
+                            <ul style="display:flex;flex-direction:column;gap:16px;">
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#94A3B8" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#64748B;line-height:1.55;">Great for complex workflows</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#94A3B8" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#64748B;line-height:1.55;">Opened when users remember to visit</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#94A3B8" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#64748B;line-height:1.55;">Lives inside browser tabs</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#94A3B8" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#64748B;line-height:1.55;">Mostly desktop-only</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#94A3B8" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#64748B;line-height:1.55;">Email updates only</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Mobile App column -->
+                        <div style="background:#FFFFFF;padding:36px 32px;position:relative;">
+                            <!-- Recommended badge -->
+                            <div style="position:absolute;top:-1px;right:24px;background:linear-gradient(135deg,#2563EB,#1D4ED8);color:#fff;font-size:10px;font-weight:700;padding:4px 14px;border-radius:0 0 12px 12px;letter-spacing:0.06em;text-transform:uppercase;box-shadow:0 4px 12px rgba(37,99,235,0.3);">Recommended</div>
+                            <!-- Column header -->
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(37,99,235,0.12);">
+                                <div style="width:36px;height:36px;border-radius:10px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:14px;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">Mobile App</div>
+                                    <div style="font-size:11px;color:#2563EB;font-weight:600;margin-top:1px;">Daily habit</div>
+                                </div>
+                            </div>
+                            <ul style="display:flex;flex-direction:column;gap:16px;">
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#0F172A;font-weight:500;line-height:1.55;">Built for daily use</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#0F172A;font-weight:500;line-height:1.55;">Lives on the home screen</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#0F172A;font-weight:500;line-height:1.55;">Works online and offline</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#0F172A;font-weight:500;line-height:1.55;">Push notifications for re-engagement</span>
+                                </li>
+                                <li style="display:flex;align-items:start;gap:10px;">
+                                    <div style="width:20px;height:20px;border-radius:6px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                                        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span style="font-size:13.5px;color:#0F172A;font-weight:500;line-height:1.55;">Faster actions on the go</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Callout banner -->
+                <div class="fade-in-up" style="margin-top:28px;">
+                    <div style="background:linear-gradient(135deg,#EFF6FF 0%,#F5F3FF 100%);border:1px solid rgba(37,99,235,0.12);border-radius:18px;padding:22px 32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <p style="font-size:14px;font-weight:500;color:#0F172A;line-height:1.6;margin:0;">Most startups don't replace their web products. They <strong style="color:#2563EB;">extend them</strong> with a mobile experience.</p>
+                    </div>
+                </div>
+
+                <!-- Three metric cards -->
+                <div class="fade-in-up" style="display:grid;gap:16px;margin-top:20px;" class="md:grid-cols-3">
+                    <div style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:10px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div style="font-size:16px;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">Faster Engagement</div>
+                        <p style="font-size:13px;color:#64748B;line-height:1.65;margin:0;">People open apps far more often than websites. Your product stays top of mind.</p>
+                    </div>
+                    <div style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:10px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        </div>
+                        <div style="font-size:16px;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">Better Retention</div>
+                        <p style="font-size:13px;color:#64748B;line-height:1.65;margin:0;">The products users rely on daily live on their phones — not in browser bookmarks.</p>
+                    </div>
+                    <div style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:10px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+                        </div>
+                        <div style="font-size:16px;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">Stronger Demos</div>
+                        <p style="font-size:13px;color:#64748B;line-height:1.65;margin:0;">A mobile app with a product video makes investor and customer conversations significantly easier.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOW WE WORK -->
+        <section id="how-we-work" style="background:#FFFFFF;padding:100px 0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-6xl mx-auto px-6">
+
+                <!-- Header -->
+                <div class="fade-in-up" style="margin-bottom:80px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+                    <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.14);border-radius:100px;margin-bottom:20px;">
+                        <span style="width:6px;height:6px;border-radius:50%;background:#2563EB;display:inline-block;flex-shrink:0;"></span>
+                        <span style="font-size:11px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.07em;">Our process</span>
+                    </div>
+                    <h2 style="font-size:clamp(1.9rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.03em;color:#0F172A;line-height:1.1;margin-bottom:16px;">How we work.</h2>
+                    <p style="font-size:17px;color:#64748B;max-width:480px;line-height:1.65;">From first conversation to App Store in 45 days — here's exactly what happens.</p>
+                </div>
+
+                <!-- Zigzag timeline -->
+                <div class="fade-in-up" style="position:relative;">
+
+                    <!-- Step 01 — LEFT -->
+                    <div style="display:grid;grid-template-columns:1fr 80px 1fr;align-items:stretch;">
+                        <div style="padding:0 36px 40px 0;display:flex;align-items:center;">
+                            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:28px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.04);width:100%;transition:box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),transform 0.25s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.boxShadow='0 16px 48px rgba(0,0,0,0.09)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.04)';this.style.transform='none'">
+                                <span style="font-size:11px;font-weight:700;color:#2563EB;background:rgba(37,99,235,0.07);display:inline-block;padding:3px 10px;border-radius:100px;margin-bottom:12px;letter-spacing:0.04em;">Week 1 · Discovery</span>
+                                <h3 style="font-size:17px;font-weight:700;color:#0F172A;letter-spacing:-0.02em;margin:0 0 8px;">We understand your product.</h3>
+                                <p style="font-size:13.5px;color:#64748B;line-height:1.7;margin:0;">We learn your core user flow, priorities, and what success looks like before any design work begins.</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;">
+                            <div style="width:2px;height:32px;background:transparent;"></div>
+                            <div style="width:52px;height:52px;border-radius:50%;background:#FFFFFF;border:2px solid #2563EB;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 7px rgba(37,99,235,0.07);">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                            </div>
+                            <div style="flex:1;width:2px;background:#E2E8F0;min-height:40px;"></div>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <!-- Step 02 — RIGHT -->
+                    <div style="display:grid;grid-template-columns:1fr 80px 1fr;align-items:stretch;">
+                        <div></div>
+                        <div style="display:flex;flex-direction:column;align-items:center;">
+                            <div style="flex:1;width:2px;background:#E2E8F0;min-height:0;"></div>
+                            <div style="width:52px;height:52px;border-radius:50%;background:#FFFFFF;border:2px solid #2563EB;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 7px rgba(37,99,235,0.07);">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                            </div>
+                            <div style="flex:1;width:2px;background:#E2E8F0;min-height:40px;"></div>
+                        </div>
+                        <div style="padding:0 0 40px 36px;display:flex;align-items:center;">
+                            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:28px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.04);width:100%;transition:box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),transform 0.25s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.boxShadow='0 16px 48px rgba(0,0,0,0.09)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.04)';this.style.transform='none'">
+                                <span style="font-size:11px;font-weight:700;color:#2563EB;background:rgba(37,99,235,0.07);display:inline-block;padding:3px 10px;border-radius:100px;margin-bottom:12px;letter-spacing:0.04em;">Week 1–2 · Design</span>
+                                <h3 style="font-size:17px;font-weight:700;color:#0F172A;letter-spacing:-0.02em;margin:0 0 8px;">We design the first screens.</h3>
+                                <p style="font-size:13.5px;color:#64748B;line-height:1.7;margin:0;">Key mobile experiences in Figma, under your exact brand. Refined with your feedback before a single line of code is written.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 — LEFT -->
+                    <div style="display:grid;grid-template-columns:1fr 80px 1fr;align-items:stretch;">
+                        <div style="padding:0 36px 40px 0;display:flex;align-items:center;">
+                            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:28px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.04);width:100%;transition:box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),transform 0.25s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.boxShadow='0 16px 48px rgba(0,0,0,0.09)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.04)';this.style.transform='none'">
+                                <span style="font-size:11px;font-weight:700;color:#7C3AED;background:rgba(124,58,237,0.07);display:inline-block;padding:3px 10px;border-radius:100px;margin-bottom:12px;letter-spacing:0.04em;">Week 2–5 · Build</span>
+                                <h3 style="font-size:17px;font-weight:700;color:#0F172A;letter-spacing:-0.02em;margin:0 0 8px;">We build the app.</h3>
+                                <p style="font-size:13.5px;color:#64748B;line-height:1.7;margin:0;">Approved designs become a fully working iOS and Android product. Weekly check-ins keep you updated at every step.</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;">
+                            <div style="flex:1;width:2px;background:#E2E8F0;min-height:0;"></div>
+                            <div style="width:52px;height:52px;border-radius:50%;background:#FFFFFF;border:2px solid #7C3AED;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 7px rgba(124,58,237,0.07);">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                            </div>
+                            <div style="flex:1;width:2px;background:#E2E8F0;min-height:40px;"></div>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <!-- Step 04 — RIGHT -->
+                    <div style="display:grid;grid-template-columns:1fr 80px 1fr;align-items:stretch;">
+                        <div></div>
+                        <div style="display:flex;flex-direction:column;align-items:center;">
+                            <div style="flex:1;width:2px;background:#E2E8F0;min-height:0;"></div>
+                            <div style="width:52px;height:52px;border-radius:50%;background:#FFFFFF;border:2px solid #7C3AED;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 7px rgba(124,58,237,0.07);">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                            </div>
+                            <div style="flex:1;width:2px;background:linear-gradient(to bottom,#E2E8F0,#1D4ED8);min-height:40px;"></div>
+                        </div>
+                        <div style="padding:0 0 40px 36px;display:flex;align-items:center;">
+                            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:28px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.04);width:100%;transition:box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),transform 0.25s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.boxShadow='0 16px 48px rgba(0,0,0,0.09)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.04)';this.style.transform='none'">
+                                <span style="font-size:11px;font-weight:700;color:#7C3AED;background:rgba(124,58,237,0.07);display:inline-block;padding:3px 10px;border-radius:100px;margin-bottom:12px;letter-spacing:0.04em;">Week 5–6 · Video</span>
+                                <h3 style="font-size:17px;font-weight:700;color:#0F172A;letter-spacing:-0.02em;margin:0 0 8px;">We create the demo video.</h3>
+                                <p style="font-size:13.5px;color:#64748B;line-height:1.7;margin:0;">A 60–90 second walkthrough with professional voiceover. Investor-ready and pitch-deck perfect.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 05 — Launch: full-width dark card -->
+                    <div style="display:grid;grid-template-columns:1fr 80px 1fr;">
+                        <div></div>
+                        <div style="display:flex;flex-direction:column;align-items:center;"><div style="width:2px;height:28px;background:linear-gradient(to bottom,#1D4ED8,transparent);"></div></div>
+                        <div></div>
+                    </div>
+                    <div style="background:linear-gradient(135deg,#0F172A 0%,#1a2744 100%);border-radius:24px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;box-shadow:0 24px 64px rgba(15,23,42,0.2),0 0 0 1px rgba(255,255,255,0.06) inset;">
+                        <div style="display:flex;align-items:flex-start;gap:20px;flex:1;min-width:0;">
+                            <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#2563EB,#1D4ED8);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 24px rgba(37,99,235,0.4);">
+                                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"/></svg>
+                            </div>
+                            <div>
+                                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                                    <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;letter-spacing:-0.02em;margin:0;">We launch.</h3>
+                                    <span style="font-size:11px;font-weight:700;color:#60A5FA;background:rgba(37,99,235,0.25);padding:3px 12px;border-radius:100px;letter-spacing:0.05em;border:1px solid rgba(96,165,250,0.3);">Day 45</span>
+                                </div>
+                                <p style="font-size:14px;color:#94A3B8;line-height:1.65;margin:0;max-width:460px;">Submitted to the App Store and Google Play. You receive the source code, the demo video, and full launch support.</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+                            <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:10px 18px;display:flex;align-items:center;gap:8px;">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                <span style="font-size:12px;font-weight:600;color:#FFFFFF;">App Store</span>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:10px 18px;display:flex;align-items:center;gap:8px;">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="#34D399"><path d="M3.18 23.76c.33.18.72.16 1.04-.03l13.37-7.71-2.93-2.94-11.48 10.68zM.49 1.07C.18 1.42 0 1.96 0 2.66v18.68c0 .7.18 1.24.49 1.59l.08.07 10.46-10.47v-.25L.57 1.01l-.08.06zM20.64 9.93l-2.8-1.62-3.22 3.22 3.22 3.22 2.83-1.63c.81-.46.81-1.22-.03-1.19zM4.22.27L17.6 8l-2.93 2.94L3.18.27C3.5.08 3.89.09 4.22.27z"/></svg>
+                                <span style="font-size:12px;font-weight:600;color:#FFFFFF;">Google Play</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHY QUARTREX -->
+        <section style="background:#FAFAFA;padding:96px 0;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-6xl mx-auto px-6 fade-in-up">
+                <div class="text-center" style="margin-bottom:56px;">
+                    <h2 style="font-size:clamp(1.75rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#0F172A;">Why startups work with Quartrex.</h2>
+                </div>
+                <div style="display:grid;gap:20px;" class="md:grid-cols-3">
+                    <div class="card" style="padding:36px;">
+                        <div style="width:44px;height:44px;border-radius:14px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px;">Fast delivery</h3>
+                        <p style="font-size:14px;color:#64748B;line-height:1.7;">Launch in 45 days. We focus on clear scope, weekly updates, and fast decisions so products keep moving without delays.</p>
+                    </div>
+                    <div class="card" style="padding:36px;">
+                        <div style="width:44px;height:44px;border-radius:14px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <h3 style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px;">Direct communication</h3>
+                        <p style="font-size:14px;color:#64748B;line-height:1.7;">You talk directly with the people building your app. No account managers. No layers between your ideas and execution.</p>
+                    </div>
+                    <div class="card" style="padding:36px;">
+                        <div style="width:44px;height:44px;border-radius:14px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        </div>
+                        <h3 style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px;">Everything in one place</h3>
+                        <p style="font-size:14px;color:#64748B;line-height:1.7;">Design, development, and the investor demo video all happen under one team — from first screen to App Store.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT YOU GET -->
+        <section style="background:#FFFFFF;padding:96px 0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-5xl mx-auto px-6 fade-in-up">
+
+                <!-- Header -->
+                <div class="text-center" style="margin-bottom:56px;">
+                    <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.14);border-radius:100px;margin-bottom:18px;">
+                        <span style="width:6px;height:6px;border-radius:50%;background:#2563EB;display:inline-block;"></span>
+                        <span style="font-size:11px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.07em;">Everything included</span>
+                    </div>
+                    <h2 style="font-size:clamp(1.75rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#0F172A;margin-bottom:12px;">What you get.</h2>
+                    <p style="font-size:16px;color:#64748B;max-width:440px;margin:0 auto;line-height:1.65;">One project. One team. No separate vendors, no hidden gaps.</p>
+                </div>
+
+                <!-- Deliverables: 4-col icon grid -->
+                <div style="display:grid;gap:16px;grid-template-columns:repeat(2,1fr);" class="sm:grid-cols-4">
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">App Design</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">Full Figma files — all screens, components, and assets delivered.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.5A6.5 6.5 0 1112 5.5a6.5 6.5 0 010 13z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">iOS Development</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">Native-quality iPhone app built for the App Store.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.5A6.5 6.5 0 1112 5.5a6.5 6.5 0 010 13z"/><path d="M8 12h8M12 8v8"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">Android Development</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">Full Android app submitted to Google Play.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">Store Submission</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">App Store and Google Play — handled end to end.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">Investor Demo Video</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">60–90 sec walkthrough with professional voiceover.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">Weekly Updates</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">Progress check-ins every week so you're never in the dark.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">Launch Support</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">We stay with you through go-live and first-week fixes.</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-item" style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(124,58,237,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;letter-spacing:-0.01em;">Direct Access</div>
+                            <div style="font-size:12.5px;color:#64748B;line-height:1.55;">Talk directly to the builders — no account managers.</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom CTA strip -->
+                <div style="margin-top:36px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <div style="width:40px;height:40px;border-radius:12px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;color:#0F172A;letter-spacing:-0.01em;">Everything above, delivered in 45 days.</div>
+                            <div style="font-size:13px;color:#64748B;margin-top:2px;">iOS + Android + Figma files + Demo video. One fixed scope.</div>
+                        </div>
+                    </div>
+                    <button onclick="openModal('prototype')" class="btn-primary" style="height:44px;padding:0 22px;font-size:13.5px;border-radius:12px;flex-shrink:0;">
+                        See your app for free →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FREE PROTOTYPE CTA -->
+        <section id="free-prototype-sec" style="background:#FAFAFA;padding:96px 0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-4xl mx-auto px-6 text-center fade-in-up" style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+                <div class="badge-purple">Limited prototype slots each month</div>
+                <h2 style="font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:#0F172A;max-width:720px;">
+                    See your app before you hire us.
+                </h2>
+                <p style="font-size:17px;color:#64748B;line-height:1.65;max-width:560px;">
+                    If your startup is a good fit, we'll design a few custom screens using your exact branding and product flow — for free. No contracts. No commitment. Just a chance to see how we think before working together.
+                </p>
+                <button onclick="openModal('prototype')" class="btn-primary" style="height:56px;padding:0 36px;font-size:16px;border-radius:16px;margin-top:8px;">
+                    Request a Free Prototype
+                </button>
+                <p style="font-size:12px;color:#94A3B8;">No commitment required. We respond within 24 hours.</p>
+            </div>
+        </section>
+
+        <!-- WHY NOT IN-HOUSE -->
+        <section style="background:#FFFFFF;padding:96px 0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-5xl mx-auto px-6 fade-in-up">
+                <div class="text-center" style="margin-bottom:56px;">
+                    <h2 style="font-size:clamp(1.75rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#0F172A;">Why not build everything in-house?</h2>
+                </div>
+                <div style="display:grid;gap:20px;" class="md:grid-cols-2">
+                    <!-- Building internally -->
+                    <div class="card-surface" style="padding:36px;">
+                        <h3 style="font-size:14px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:22px;">Building internally</h3>
+                        <ul style="display:flex;flex-direction:column;gap:16px;">
+                            <li style="display:flex;gap:12px;font-size:14px;color:#64748B;line-height:1.65;">
+                                <span style="margin-top:3px;color:#CBD5E1;flex-shrink:0;">—</span>
+                                Hiring takes time, especially when you need designers, developers, and video experience at the same time.
+                            </li>
+                            <li style="display:flex;gap:12px;font-size:14px;color:#64748B;line-height:1.65;">
+                                <span style="margin-top:3px;color:#CBD5E1;flex-shrink:0;">—</span>
+                                Managing multiple freelancers often creates delays and handoff problems.
+                            </li>
+                            <li style="display:flex;gap:12px;font-size:14px;color:#64748B;line-height:1.65;">
+                                <span style="margin-top:3px;color:#CBD5E1;flex-shrink:0;">—</span>
+                                Video production becomes its own separate project with its own timeline.
+                            </li>
+                            <li style="display:flex;gap:12px;font-size:14px;color:#64748B;line-height:1.65;">
+                                <span style="margin-top:3px;color:#CBD5E1;flex-shrink:0;">—</span>
+                                Your team spends more time coordinating than shipping.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Working with Quartrex -->
+                    <div class="card" style="padding:36px;border:1.5px solid #0F172A;position:relative;">
+                        <div style="position:absolute;top:-13px;right:20px;background:#0F172A;color:#FFFFFF;font-size:10px;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;">Fastest route</div>
+                        <h3 style="font-size:14px;font-weight:700;color:#0F172A;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:22px;">Working with Quartrex</h3>
+                        <ul style="display:flex;flex-direction:column;gap:16px;">
+                            <li style="display:flex;gap:12px;font-size:14px;color:#0F172A;line-height:1.65;font-weight:500;">
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                Start immediately with one focused team instead of hiring multiple people.
+                            </li>
+                            <li style="display:flex;gap:12px;font-size:14px;color:#0F172A;line-height:1.65;font-weight:500;">
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                Design, development, and demo video move together from day one.
+                            </li>
+                            <li style="display:flex;gap:12px;font-size:14px;color:#0F172A;line-height:1.65;font-weight:500;">
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                You always know exactly who is building your product.
+                            </li>
+                            <li style="display:flex;gap:12px;font-size:14px;color:#0F172A;line-height:1.65;font-weight:500;">
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#2563EB" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                Simple goal: launch fast and investor-ready without the overhead.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE ARE -->
+        <section style="background:#FAFAFA;padding:64px 0;border-bottom:1px solid #E2E8F0;">
+            <div class="max-w-3xl mx-auto px-6 fade-in-up">
+                <div style="display:flex;flex-direction:column;gap:24px;" class="sm:flex-row sm:items-start sm:gap-8">
+                    <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,rgba(37,99,235,0.12),rgba(124,58,237,0.10));border:1.5px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#2563EB;flex-shrink:0;">Q</div>
+                    <div>
+                        <h3 style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:8px;">Built by a small, focused team.</h3>
+                        <p style="font-size:14px;color:#64748B;line-height:1.75;">We are a small team that works directly with every client — no handoffs, no project managers in between. When you reach out, you talk to the people actually designing and building your product. We work with a small number of startups at a time so each project gets full attention.</p>
+                        <p style="font-size:12px;color:#94A3B8;margin-top:14px;">Questions? <a href="mailto:ahmad@quartrex.com" style="color:#2563EB;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">ahmad@quartrex.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" style="background:#FFFFFF;padding:96px 0;">
+            <div class="max-w-3xl mx-auto px-6 fade-in-up">
+                <div class="text-center" style="margin-bottom:56px;">
+                    <h2 style="font-size:clamp(1.75rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#0F172A;">FAQ</h2>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            Who do you work with?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">Mostly funded startups building mobile products — seed to Series A teams that want to move fast without hiring an internal team.</p>
+                    </details>
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            What does the free prototype include?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">A few custom screens built in Figma using your real branding, colors, and product flow. Fully clickable and interactive — not static screenshots.</p>
+                    </details>
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            Do you build both iOS and Android?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">Yes — we build for both the App Store and Google Play, submitted and live by the end of the project.</p>
+                    </details>
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            What is included in the demo video?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">A 60–90 second product walkthrough with professional voiceover — formatted for pitch decks, investor updates, and board presentations.</p>
+                    </details>
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            How do we communicate during the project?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">You work directly with the people building your product. Weekly updates, direct messages, and a shared space to review progress — no middlemen.</p>
+                    </details>
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            How much does a project cost?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">Projects typically start at $8,000 for funded teams, depending on scope and features. We work on a fixed-price basis — no surprise invoices.</p>
+                    </details>
+                    <details style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
+                        <summary style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-size:15px;font-weight:600;color:#0F172A;user-select:none;">
+                            How long does a project take?
+                            <span class="faq-icon" style="width:22px;height:22px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;font-size:16px;font-weight:400;color:#64748B;">+</span>
+                        </summary>
+                        <p style="padding:0 24px 22px;font-size:14px;color:#64748B;line-height:1.7;">Most projects launch within 45 days. Timeline depends on feedback speed and scope — we keep things moving with weekly check-ins.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section style="background:#FAFAFA;padding:96px 0;border-top:1px solid #E2E8F0;text-align:center;">
+            <div class="max-w-3xl mx-auto px-6 fade-in-up" style="display:flex;flex-direction:column;align-items:center;gap:18px;">
+                <h2 style="font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:#0F172A;">Ready to build?</h2>
+                <p style="font-size:17px;color:#64748B;max-width:420px;line-height:1.6;">Tell us what you're building and we'll see if we're a good fit.</p>
+                <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;" class="sm:flex-row">
+                    <button onclick="openModal('prototype')" class="btn-primary" style="height:52px;padding:0 32px;font-size:15px;border-radius:14px;">Get a Free Prototype</button>
+                    <button onclick="openModal('call')" class="btn-secondary" style="height:52px;padding:0 32px;font-size:15px;border-radius:14px;">Book a Call</button>
+                </div>
+                <p style="font-size:12px;color:#94A3B8;margin-top:4px;">Projects start at $8,000 · 45-day delivery · iOS + Android + Demo Video</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background:#FFFFFF;border-top:1px solid #E2E8F0;padding:40px 0;">
+        <div class="max-w-6xl mx-auto px-6" style="display:flex;flex-direction:column;align-items:center;gap:16px;" class="md:flex-row md:justify-between">
+            <div style="display:flex;align-items:center;">
+                <img src="logo.png" alt="Quartrex" style="height:28px;width:auto;display:block;">
+            </div>
+            <nav style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;">
+                <a href="#how-we-work" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#0F172A'" onmouseout="this.style.color='#64748B'">Process</a>
+                <a href="#faq" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#0F172A'" onmouseout="this.style.color='#64748B'">FAQ</a>
+                <a href="mailto:ahmad@quartrex.com" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#0F172A'" onmouseout="this.style.color='#64748B'">ahmad@quartrex.com</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="actionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(15,23,42,0.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;transition:opacity 0.3s cubic-bezier(0.16,1,0.3,1);">
+        <div id="modalBox" style="background:#FFFFFF;border:1px solid #E2E8F0;width:100%;max-width:460px;border-radius:24px;padding:36px;box-shadow:0 32px 80px rgba(0,0,0,0.14);position:relative;transform:scale(0.95);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);max-height:90vh;overflow-y:auto;">
+
+            <!-- Close button -->
+            <button onclick="closeModal()" aria-label="Close modal" style="position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:#F8FAFC;border:1px solid #E2E8F0;cursor:pointer;font-size:14px;color:#64748B;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s,border-color 0.2s;" onmouseover="this.style.background='#F1F5F9';this.style.color='#0F172A';this.style.borderColor='#CBD5E1'" onmouseout="this.style.background='#F8FAFC';this.style.color='#64748B';this.style.borderColor='#E2E8F0'">✕</button>
+
+            <h3 id="modalTitle" style="font-size:22px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;padding-right:40px;">Get a Free Prototype</h3>
+            <p id="modalSub" style="font-size:13px;color:#64748B;margin-top:6px;line-height:1.55;">We'll review your product and design your first screens within 48 hours.</p>
+
+            <!-- Formspree form -->
+            <!-- Replace YOUR_FORM_ID with actual Formspree form ID -->
+         <form id="leadForm"
+      action="https://formspree.io/f/mwvdlnve"
+      method="POST"
+      style="margin-top:24px;display:flex;flex-direction:column;gap:18px;">
+
+    <!-- Hidden metadata -->
+    <input type="hidden" name="source" value="Quartrex Website">
+
+    <!-- Full Name -->
+    <div>
+        <label for="field-name" class="form-label">Full Name</label>
+        <input
+            type="text"
+            id="field-name"
+            name="name"
+            required
+            placeholder="Jane Smith"
+            autocomplete="name"
+            class="form-field"
+            style="height:48px;padding:0 16px;">
+    </div>
+
+    <!-- Work Email -->
+    <div>
+        <label for="field-email" class="form-label">Work Email</label>
+        <input
+            type="email"
+            id="field-email"
+            name="email"
+            required
+            placeholder="you@company.com"
+            autocomplete="email"
+            class="form-field"
+            style="height:48px;padding:0 16px;">
+    </div>
+
+    <!-- Project Brief -->
+    <div>
+        <label for="field-project" class="form-label">
+            Tell us about your project
+        </label>
+
+        <textarea
+            id="field-project"
+            name="project"
+            required
+            rows="4"
+            placeholder="What are you building, what problem are you solving, and what outcome are you looking for?"
+            class="form-field"
+            style="padding:14px 16px;resize:none;line-height:1.6;"></textarea>
+    </div>
+
+    <!-- Screen-reader live status -->
+    <div
+        id="formStatus"
+        aria-live="polite"
+        aria-atomic="true"
+        style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+    </div>
+
+    <!-- Submit -->
+    <button
+        type="submit"
+        id="submitBtn"
+        class="btn-primary"
+        style="width:100%;height:52px;border-radius:14px;font-size:15px;position:relative;">
+
+        <span id="submitLabel">Book a Discovery Call</span>
+
+        <span
+            id="submitSpinner"
+            style="display:none;position:absolute;right:16px;top:50%;transform:translateY(-50%);">
+
+            <svg width="18" height="18" viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2.5"
+                 style="animation:spin .8s linear infinite;">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+
+        </span>
+    </button>
+
+    <p style="font-size:12px;color:#94A3B8;text-align:center;">
+        We'll review your project and get back within 24 hours.
+    </p>
+
+</form>
+            <!-- Success state -->
+            <div id="successPanel" style="display:none;text-align:center;padding:16px 0 8px;opacity:0;transform:scale(0.96);transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.4s cubic-bezier(0.16,1,0.3,1);">
+                <!-- Animated check ring -->
+                <div style="width:64px;height:64px;margin:0 auto 20px;position:relative;">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="position:absolute;inset:0;">
+                        <circle cx="32" cy="32" r="30" stroke="#EFF6FF" stroke-width="2"/>
+                        <circle id="successRing" cx="32" cy="32" r="30" stroke="#2563EB" stroke-width="2.5"
+                                stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="188.5"
+                                style="transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s;"/>
+                    </svg>
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="position:absolute;inset:0;">
+                        <path id="successCheck" d="M21 32l8 8 14-14" stroke="#2563EB" stroke-width="2.5"
+                              stroke-linecap="round" stroke-linejoin="round"
+                              stroke-dasharray="30" stroke-dashoffset="30"
+                              style="transition:stroke-dashoffset 0.4s cubic-bezier(0.16,1,0.3,1) 0.5s;"/>
+                    </svg>
+                </div>
+                <h4 style="font-size:20px;font-weight:800;color:#0F172A;margin-bottom:8px;letter-spacing:-0.02em;">Request Received</h4>
+                <p style="font-size:14px;color:#64748B;line-height:1.65;margin-bottom:4px;">Thanks for reaching out.</p>
+                <p style="font-size:14px;color:#64748B;line-height:1.65;">We'll review your product and contact you within 24 hours. Our team typically responds within one business day.</p>
+                <div style="margin-top:6px;padding:12px 16px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;font-size:12px;color:#64748B;">
+                    Questions in the meantime? <a href="mailto:ahmad@quartrex.com" style="color:#2563EB;font-weight:600;text-decoration:none;">ahmad@quartrex.com</a>
+                </div>
+                <button onclick="closeModal()" class="btn-secondary" style="margin-top:20px;height:42px;padding:0 28px;font-size:13px;border-radius:10px;">
+                    Back to Page
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+
+    <script>
+        const modal = document.getElementById('actionModal');
+        const modalBox = document.getElementById('modalBox');
+
+        /* ── Modal ── */
+        function openModal(type) {
+            if (type === 'call') {
+                const cal = window.open('https://calendly.com/quartrex/30min', '_blank', 'noopener,noreferrer');
+                if (cal) cal.opener = null;
+                return;
+            }
+            const form = document.getElementById('leadForm');
+            const success = document.getElementById('successPanel');
+            form.style.display = 'flex';
+            success.style.display = 'none';
+            success.style.opacity = '0';
+            success.style.transform = 'scale(0.96)';
+            form.reset();
+            document.getElementById('modalTitle').innerText = 'Get a Free Prototype';
+            document.getElementById('modalSub').innerText = "We'll review your product and design your first screens within 48 hours.";
+            document.getElementById('submitLabel').innerText = 'Submit Request';
+            document.getElementById('submitSpinner').style.display = 'none';
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute('aria-busy');
+            modal.style.display = 'flex';
+            modalBox.style.transform = 'scale(0.95)';
+            modal.style.opacity = '0';
+            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                modal.style.opacity = '1';
+                modalBox.style.transform = 'scale(1)';
+                setTimeout(() => { const f = document.getElementById('field-name'); if (f) f.focus(); }, 320);
+            }));
+        }
+
+        function closeModal() {
+            modal.style.opacity = '0';
+            modalBox.style.transform = 'scale(0.95)';
+            document.body.style.overflow = '';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function showSuccess() {
+            const form = document.getElementById('leadForm');
+            const success = document.getElementById('successPanel');
+            form.style.display = 'none';
+            success.style.display = 'block';
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                success.style.opacity = '1';
+                success.style.transform = 'scale(1)';
+                const ring = document.getElementById('successRing');
+                const check = document.getElementById('successCheck');
+                if (ring) ring.style.strokeDashoffset = '0';
+                if (check) check.style.strokeDashoffset = '0';
+            }));
+        }
+
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+
+        /* ── Formspree ── */
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const label = document.getElementById('submitLabel');
+            const spinner = document.getElementById('submitSpinner');
+            const statusEl = document.getElementById('formStatus');
+            btn.disabled = true;
+            btn.setAttribute('aria-busy', 'true');
+            label.innerText = 'Sending…';
+            spinner.style.display = 'inline-flex';
+            if (statusEl) statusEl.innerText = 'Submitting your request…';
+            try {
+                const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+                if (res.ok) {
+                    if (statusEl) statusEl.innerText = 'Request submitted successfully.';
+                    showSuccess();
+                } else {
+                    const msg = 'Something went wrong — please try again';
+                    label.innerText = msg; if (statusEl) statusEl.innerText = msg;
+                    spinner.style.display = 'none'; btn.disabled = false; btn.removeAttribute('aria-busy');
+                }
+            } catch {
+                const msg = 'Network error — please try again';
+                label.innerText = msg; if (statusEl) statusEl.innerText = msg;
+                spinner.style.display = 'none'; btn.disabled = false; btn.removeAttribute('aria-busy');
+            }
+        });
+
+        /* ── Scroll progress bar ── */
+        const progressBar = document.getElementById('scroll-progress');
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (progressBar) progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+        }
+
+        /* ── Nav scroll shadow ── */
+        const siteHeader = document.getElementById('site-header');
+        function updateNav() {
+            if (!siteHeader) return;
+            if (window.scrollY > 20) siteHeader.classList.add('nav-scrolled');
+            else siteHeader.classList.remove('nav-scrolled');
+        }
+
+        /* ── Active nav links ── */
+        const sections = [
+            { id: 'how-we-work', link: document.querySelector('a[href="#how-we-work"]') },
+            { id: 'faq',         link: document.querySelector('a[href="#faq"]') },
+        ];
+        function updateActiveNav() {
+            const scrollY = window.scrollY + 120;
+            sections.forEach(({ id, link }) => {
+                if (!link) return;
+                const el = document.getElementById(id);
+                if (!el) return;
+                const top = el.offsetTop;
+                const bottom = top + el.offsetHeight;
+                if (scrollY >= top && scrollY < bottom) link.classList.add('active');
+                else link.classList.remove('active');
+            });
+        }
+
+        /* ── Floating mobile CTA ── */
+        const floatCta = document.getElementById('float-cta');
+        function updateFloatCta() {
+            if (!floatCta) return;
+            if (window.scrollY > 500) floatCta.classList.add('visible');
+            else floatCta.classList.remove('visible');
+        }
+
+        /* ── Combined scroll handler ── */
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateProgress();
+                    updateNav();
+                    updateActiveNav();
+                    updateFloatCta();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        /* ── Mobile nav ── */
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        function openMobileMenu() {
+            if (!mobileMenu || !hamburgerBtn) return;
+            mobileMenu.classList.add('open');
+            hamburgerBtn.classList.add('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            if (!mobileMenu || !hamburgerBtn) return;
+            mobileMenu.classList.remove('open');
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', () => {
+            if (mobileMenu && mobileMenu.classList.contains('open')) closeMobileMenu();
+            else openMobileMenu();
+        });
+        if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+        if (mobileMenu) mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) closeMobileMenu(); });
+
+        /* ── Scroll reveal ── */
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        /* ── FAQ accordion ── */
+        document.querySelectorAll('details').forEach(d => {
+            d.addEventListener('click', () => {
+                document.querySelectorAll('details').forEach(other => { if (other !== d) other.removeAttribute('open'); });
+            });
+        });
+
+        /* ── Hero parallax ── */
+        const heroMockup = document.getElementById('heroMockup');
+        const heroFloatCards = document.querySelectorAll('.hero-float-card');
+        if (heroMockup) {
+            let parallaxTicking = false;
+            document.addEventListener('mousemove', (e) => {
+                if (!parallaxTicking) {
+                    requestAnimationFrame(() => {
+                        const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+                        const dx = (e.clientX - cx) / cx, dy = (e.clientY - cy) / cy;
+                        heroMockup.style.transform = `perspective(1000px) rotateY(${dx * 3}deg) rotateX(${-dy * 2}deg)`;
+                        heroFloatCards.forEach((card, i) => {
+                            const depth = i === 0 ? 1.8 : 1.2;
+                            card.style.transform = `translate(${dx * depth * 6}px, ${dy * depth * 4}px)`;
+                        });
+                        parallaxTicking = false;
+                    });
+                    parallaxTicking = true;
+                }
+            });
+        }
+
+        /* ── FOUC prevention ── */
+        document.addEventListener('DOMContentLoaded', () => {
+            requestAnimationFrame(() => { document.body.classList.add('tw-ready'); });
+        });
+    </script>
+</body>
+</html>
