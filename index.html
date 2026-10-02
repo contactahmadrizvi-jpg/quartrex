@@ -45,9 +45,18 @@
       "description": "Native mobile app development for startups in 55 days."
     }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <!-- Performance: preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://api.web3forms.com">
+
+    <!-- Non-blocking Google Fonts (print→all trick avoids render-blocking) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+
+    <!-- Tailwind CDN: defer so it doesn't block first paint -->
+    <script defer src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -107,11 +116,14 @@
         }
     </script>
     <style>
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             background-color: #fdfcff;
-            overflow-x: hidden !important;
-            width: 100vw;
-            height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
         /* Abstract Background Blobs */
@@ -1871,26 +1883,34 @@
                         detailed estimate.</p>
                 </div>
 
-                <form onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                    <!-- Web3Forms hidden access key -->
+                    <input type="hidden" name="access_key" value="609d8d7c-c082-46c4-92a9-5da46ef35a95">
+                    <input type="hidden" name="subject" value="New Quote Request from Quartrex Website">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1"
                             for="name">Your Name</label>
-                        <input type="text" id="name" required
+                        <input type="text" id="name" name="name" required
                             class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1"
                             for="email">Work Email</label>
-                        <input type="email" id="email" required
+                        <input type="email" id="email" name="email" required
                             class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1"
                             for="details">Project Details (Required)</label>
-                        <textarea id="details" rows="3" required
+                        <textarea id="details" name="message" rows="3" required
                             placeholder="Tell us about your app, timeline, and goals..."
                             class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"></textarea>
                     </div>
+
+                    <!-- Error message (hidden by default) -->
+                    <p id="quote-error-msg" class="hidden text-red-500 text-sm text-center">Something went wrong. Please try again or email us directly.</p>
 
                     <button type="submit" id="quote-submit-btn"
                         class="w-full bg-brand-600 hover:bg-brand-500 text-white px-6 py-4 rounded-xl font-bold text-base transition-all shadow-button mt-4 flex items-center justify-center gap-2">
@@ -2012,27 +2032,48 @@
             }, 300);
         }
 
-        function handleQuoteSubmit(event) {
+        async function handleQuoteSubmit(event) {
             event.preventDefault();
             const btn = document.getElementById('quote-submit-btn');
+            const errorMsg = document.getElementById('quote-error-msg');
+
+            // Hide any previous error
+            errorMsg.classList.add('hidden');
 
             // Show loading state
             btn.innerHTML = `<svg class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...`;
             btn.classList.add('opacity-80', 'cursor-not-allowed');
             btn.disabled = true;
 
-            // Simulate slight delay then show success state
-            setTimeout(() => {
-                quoteFormContainer.classList.add('hidden');
-                quoteSuccess.classList.remove('hidden');
-                quoteSuccess.classList.add('flex');
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
 
-                // Reset button state (in case user comes back)
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    // Show success state
+                    quoteFormContainer.classList.add('hidden');
+                    quoteSuccess.classList.remove('hidden');
+                    quoteSuccess.classList.add('flex');
+                    event.target.reset();
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (err) {
+                console.error('Web3Forms error:', err);
+                errorMsg.classList.remove('hidden');
+            } finally {
+                // Restore button
                 btn.innerHTML = `Submit Request <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`;
                 btn.classList.remove('opacity-80', 'cursor-not-allowed');
                 btn.disabled = false;
-                event.target.reset(); // Clear form inputs
-            }, 1200);
+            }
         }
 
         // Mobile Menu Logic
